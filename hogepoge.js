@@ -14,11 +14,10 @@ function sendSO() {
 	};
 
   //se: FARO Orders for Integration
-  //My search
-  //var results = nlapiSearchRecord('salesorder','customsearch5273');
-  //Kevin's search because it has some SO's in there
-  var results = nlapiSearchRecord('salesorder','customsearch4764');
-
+  //Mine search
+    //var results = nlapiSearchRecord('salesorder','customsearch5273');
+    //Kevin's search.
+    var results = nlapiSearchRecord('salesorder','customsearch4764');
 	if(results) {
 
     var checkGovernance = function() {
@@ -76,153 +75,25 @@ function sendSO() {
             lines: [] 
         }
 
-        // This feels like what is to be send to a dasher.. Not what we should send for orders. So what is their API really expecting?
-        // Either way, i'll create it for now as it can't hurt. 
-        var payload2 = {
-          orders:[
-            {
-              id: '',
-              name: '',
-              eligibility:{
-                onDates: '',
-                startTimeWindows: '',
-                endTimeWindows: ''
-              },
-              trackingNumber: '',
-              status: '',
-              pickup: {
-                location:{
-                  address: '',
-                  address2: '',
-                  geocoordinates: {
-                    latitude: '',
-                    longitude: ''
-                  },
-                  city: '',
-                  country: '',
-                  region: '',
-                  postalCode: ''
-                },
-                notes: '',
-                email: '',
-                phone: '',
-                pickupContactName: '',
-                pickupContactName: '',
-                pickupRestaurant_id: ''
-              },
-              delivery: {
-                location: {
-                  address: '',
-                  address2: '',
-                  geocoordinates: {
-                    latitude: '',
-                    longitude: ''
-                  },
-                  city: '',
-                  country: '',
-                  region: '',
-                  postalCode: ''
-                },
-                notes: '',
-                email: '',
-                phone: '',
-                deliveryContactName: '',
-                deliveryOrderNumber: '',
-                deliveryRestaurant_id: ''
-              },
-              line_items: [{}],
-              device_serial_number: '',
-              callbacks: {
-                created: '',
-                "in-process": '',
-                "out-for-delivery": '',
-                done: '',
-                unsuccessful: '',
-                reschedule: '',
-                "returned-to-sender": ''
-              }
-            }
-          ]
-        }
-
-        // {
-        //   "orders": [
-        //     {
-        //       "id": "1ca59080-fcca-11eb-9a03-0242ac130003 | 0025",
-        //       "name": "Japan Logistics Hub | null (If null it will get the registered company name)",
-        //       "eligibility": {
-        //         "onDates": "YYYYMMDD | 20210810",
-        //         "startTimeWindows": "H:i | 14:00",
-        //         "endTimeWindows": "H:i | 16:30"
-        //       },
-        //       "trackingNumber": "JLH20210611968df29506 | null | '' ",
-        //       "status": "Created | In-process | Out for Delivery | Done | Reschedule | Unsuccessful| Successfully returned to sender | null | '' ",
-        //       "pickup": {
-        //         "location": {
-        //           "address": "1056-7 Yamada,Togane, Chiba Prefecture,283-0823 Japan",
-        //           "address2": "Japan Logistics Hub",
-        //           "geocoordinates": {
-        //             "latitude": "13.721126 | null | '' ",
-        //             "longitude": "100.515605 | null | '' "
-        //           },
-        //           "city": "Tokyo",
-        //           "country": "Japan",
-        //           "region": "region | null | '' ",
-        //           "postalCode": "629196"
-        //         },
-        //         "notes": "Pickup Order Number 1234 put some ribbon",
-        //         "email": "orders@jplogisticshub.com",
-        //         "phone": "+65956458796",
-        //         "pickupContactName": "Warehouse Person In-charge | null | '' ",
-        //         "pickupOrderNumber": "Order-12345 | null | '' ",
-        //         "pickupRestaurant_id": "restaurant-12345 | null | '' "
-        //       },
-        //       "delivery": {
-        //         "location": {
-        //           "address": "1056-7 Yamada,Togane, Chiba Prefecture,283-0823 Japan",
-        //           "address2": "Japan Logistics Hub",
-        //           "geocoordinates": {
-        //             "latitude": "13.721126 | null | '' ",
-        //             "longitude": "100.515605 | null | '' "
-        //           },
-        //           "city": "Tokyo",
-        //           "country": "Japan",
-        //           "region": "region | null | '' ",
-        //           "postalCode": "629196"
-        //         },
-        //         "notes": "Leave at the door",
-        //         "email": "orders@jplogisticshub.com",
-        //         "phone": "+65956458796",
-        //         "deliveryContactName": "John Doe | null | '' ",
-        //         "deliveryOrderNumber": "Order-12345 | null | '' ",
-        //         "deliveryRestaurant_id": "restaurant-12345 | null | '' "
-        //       },
-        //       "line_items": [
-        //         {
-        //           "id": "Product-1234",
-        //           "name": "Sample Product Name Here",
-        //           "quantity": 2,
-        //           "sku": "SKU-1234 | null | ''",
-        //           "price": "24",
-        //           "unit_price": "12"
-        //         }
-        //       ],
-        //       "device_serial_number": "FPSG-1234-001",
-        //       "callbacks": {
-        //         "created": "https://YourDomainURLhere.com",
-        //         "in-process": "https://YourDomainURLhere.com",
-        //         "out-for-delivery": "https://YourDomainURLhere.com",
-        //         "done": "https://YourDomainURLhere.com",
-        //         "unsuccessful": "https://YourDomainURLhere.com",
-        //         "reschedule": "https://YourDomainURLhere.com",
-        //         "returned-to-sender": "https://YourDomainURLhere.com"
-        //       }
-        //     }
-        //   ]
-        // }
+        // tranid: "",
+        // internalid: "",
+        // name: "",
+        // email: "",
+        // shipaddressee: "",
+        // shipattention: "",
+        // shipphone: "",
+        // shipaddr1: "",
+        // shipaddr2: "",
+        // shipaddr3: "",
+        // shipcity: "",
+        // shipstate: "",
+        // shipzip: "",
+        // shipcountry: "",
+        // items: []
 
         //Old Search
         var rec = nlapiLoadRecord('salesorder', results[i].getId());
+
         //New Search
         //var rec = nlapiLoadRecord('salesorder',results[i].getValue('internalid',null,'GROUP'));
         var tranId = rec.getFieldValue('tranid');
@@ -242,6 +113,21 @@ function sendSO() {
         payload.receivebydate = rec.getFieldValue('enddate'); 
         payload.email = rec.getFieldValue('custbody_customer_email');
         payload.specialinstructions = rec.getFieldValue('custbody_special_instructions');
+
+        // payload.tranid = rec.getFieldValue("tranid");
+        // payload.internalid = rec.id;
+        // payload.name = rec.getFieldValue("custbody_customer_name");
+        // payload.email = rec.getFieldValue('custbody_customer_email');
+        // payload.shipaddressee = rec.getFieldValue('shipaddressee');
+        // payload.shipattention = rec.getFieldValue('shipattention');
+        // payload.shipphone = rec.getFieldValue('custbody_shiptophone');
+        // payload.shipaddr1 = rec.getFieldValue("shipaddr1");
+        // payload.shipaddr2 = rec.getFieldValue("shipaddr2");
+        // payload.shipaddr3 = rec.getFieldValue("shipaddr3");
+        // payload.shipcity = rec.getFieldValue('shipcity');
+        // payload.shipstate = rec.getFieldValue('shipstate');
+        // payload.shipzip = rec.getFieldValue('shipzip');
+        // payload.shipcountry = rec.getFieldValue('shipcountry');
         
         var modifyTranId = false;
 

@@ -1,0 +1,75 @@
+{
+    "orders": [
+      {
+        "id": "1ca59080-fcca-11eb-9a03-0242ac130003 | 0025",
+        "name": "Japan Logistics Hub | null (If null it will get the registered company name)",
+        "eligibility": {
+          "onDates": "YYYYMMDD | 20210810",
+          "startTimeWindows": "H:i | 14:00",
+          "endTimeWindows": "H:i | 16:30"
+        },
+        "trackingNumber": "JLH20210611968df29506 | null | '' ",
+        "status": "Created | In-process | Out for Delivery | Done | Reschedule | Unsuccessful| Successfully returned to sender | null | '' ",
+        "pickup": {
+          "location": {
+            "address": "1056-7 Yamada,Togane, Chiba Prefecture,283-0823 Japan",
+            "address2": "Japan Logistics Hub",
+            "geocoordinates": {
+              "latitude": "13.721126 | null | '' ",
+              "longitude": "100.515605 | null | '' "
+            },
+            "city": "Tokyo",
+            "country": "Japan",
+            "region": "region | null | '' ",
+            "postalCode": "629196"
+          },
+          "notes": "Pickup Order Number 1234 put some ribbon",
+          "email": "orders@jplogisticshub.com",
+          "phone": "+65956458796",
+          "pickupContactName": "Warehouse Person In-charge | null | '' ",
+          "pickupOrderNumber": "Order-12345 | null | '' ",
+          "pickupRestaurant_id": "restaurant-12345 | null | '' "
+        },
+        "delivery": {
+          "location": {
+            "address": "1056-7 Yamada,Togane, Chiba Prefecture,283-0823 Japan",
+            "address2": "Japan Logistics Hub",
+            "geocoordinates": {
+              "latitude": "13.721126 | null | '' ",
+              "longitude": "100.515605 | null | '' "
+            },
+            "city": "Tokyo",
+            "country": "Japan",
+            "region": "region | null | '' ",
+            "postalCode": "629196"
+          },
+          "notes": "Leave at the door",
+          "email": "orders@jplogisticshub.com",
+          "phone": "+65956458796",
+          "deliveryContactName": "John Doe | null | '' ",
+          "deliveryOrderNumber": "Order-12345 | null | '' ",
+          "deliveryRestaurant_id": "restaurant-12345 | null | '' "
+        },
+        "line_items": [
+          {
+            "id": "Product-1234",
+            "name": "Sample Product Name Here",
+            "quantity": 2,
+            "sku": "SKU-1234 | null | ''",
+            "price": "24",
+            "unit_price": "12"
+          }
+        ],
+        "device_serial_number": "FPSG-1234-001",
+        "callbacks": {
+          "created": "https://YourDomainURLhere.com",
+          "in-process": "https://YourDomainURLhere.com",
+          "out-for-delivery": "https://YourDomainURLhere.com",
+          "done": "https://YourDomainURLhere.com",
+          "unsuccessful": "https://YourDomainURLhere.com",
+          "reschedule": "https://YourDomainURLhere.com",
+          "returned-to-sender": "https://YourDomainURLhere.com"
+        }
+      }
+    ]
+  }

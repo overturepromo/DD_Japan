@@ -15,11 +15,11 @@ function createRecord() {
     var header = {
       'Cache-Control' : 'no-cache',
       'Content-Type' : 'application/json',
-      'Authorization':'ZeRuuM3HfZHJHwkG0JomklVHVbnhN7EB'
+      'Authorization':'f249d7fc-9471-4a0a-a55d-6fbfa14ddbb2'
     };
   
   
-    var results = nlapiSearchRecord('salesorder','customsearch5105');
+    var results = nlapiSearchRecord('salesorder','customsearch5273');
   
     if(results) {
   
@@ -32,7 +32,7 @@ function createRecord() {
   
           try{
             
-            var script = nlapiScheduleScript('customscript_op_sched_faro_fulfillment');
+            var script = nlapiScheduleScript('customscript_op_sched_ddjapantracking');
   
             if(script == 'QUEUED') {
               nlapiLogExecution('ERROR','Re-scheduling due to governance', 'Successful re-schedule.');
@@ -81,10 +81,11 @@ function createRecord() {
             }
           } 
 
+          //update get to right request
           if(orderIds.length > 0) {
             for(var j = 0; j < orderIds.length; j++){
               var response = nlapiRequestURL(
-                'https://overture.crea2print.com/json/order/' + orderIds[j],
+                'https://api.jplogisticshub.com/callback/sandbox/order.php' + orderIds[j],
                 null,
                 header,
                 null,
